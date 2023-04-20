@@ -1,0 +1,83 @@
+<html>
+
+<body>
+    <!-- An element "app" -->
+    <div id="app">
+
+    </div>
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Script to manipulate an element -->
+    <script type="text/jsx">
+        // An object representing the div tag with ID "app"
+        const app = document.getElementById('app');
+
+        // console.log(app);
+
+        // const header = document.createElement('h1');
+
+        // const headerContent = document.createTextNode('HelloWorld');
+
+        // header.appendChild(headerContent);
+        // app.appendChild(header);
+
+        // Building a component
+        function Header({ title }) {
+            console.log(title);
+
+            return (
+                <h1>{ title ?? 'Default Title'}</h1>
+            )
+        }
+
+        // Nested components
+        // Props -- passed as a function argument
+        // function HomePage() {
+        //     const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+        //     // Looping over a list
+        //     // Return
+        //     return (
+        //         <div>
+        //             <ul>
+        //                 {
+        //                     names.map((name, index) => {
+        //                         return <li key={ index } > { name }</li>
+        //                     })
+        //                 }
+        //             </ul>
+        //         </div>
+        //     )
+        // }
+
+        // Events
+        function HomePage() {
+            const [likes, setLikes] = React.useState(0);
+
+            function handleClick() {
+                console.log('increment like count');
+
+                setLikes(likes + 1);
+
+                // Error
+                // likes++;
+            }
+
+            return (
+                <>
+                    <button onClick={handleClick}>Like ({likes})</button>
+                </>
+            )
+        }
+
+        ReactDOM.render(<HomePage />, app);
+    </script>
+</body>
+
+</html>
