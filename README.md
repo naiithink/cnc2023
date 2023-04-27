@@ -1,7 +1,1 @@
-# GraphZC Web CNC Class
-
-CNC Class
-
-## Lectures
-
-1. HTML, CSS
+# CNC2023 Summer Classes
